@@ -1,0 +1,22 @@
+---
+---
+<html>
+  <head>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+      {% capture data %}{% include_relative README.md %}
+      {% endcapture %}{{ data | replace: "](./", "](#" | escape_once| markdownify  }}
+    <ul class="posts">
+      {% for post in site.static_files %}
+      {% if post.path contains '/data/' %}
+      <li class="post" id="{{ post.path | replace: '/data/' , '' }}">
+      {% capture data %}{% include_relative {{ post.path }} %}
+      {% endcapture %}{{ data | xml_escape }}
+      <a href="#{{ post.path | replace: '/data/' , '' | uri_escape}}">#</a>
+      </li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </body>
+</html>
