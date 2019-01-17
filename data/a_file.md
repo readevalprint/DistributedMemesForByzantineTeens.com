@@ -1,4 +1,4 @@
-<script>alert(window.domain)</script>
+<scr<a>ipt>alert(window.domain)</scr<a>ipt>
 # hello this is a_file.md
 
 ## there is not much more ot say about it
