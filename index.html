@@ -10,10 +10,12 @@
     <ul class="posts">
       {% for post in site.static_files %}
       {% if post.path contains '/data/' %}
-      <li class="post" id="{{ post.path | replace: '/data/' , '' }}">
-      {% capture data %}{% include_relative {{ post.path }} %}
-      {% endcapture %}{{ data | strip| escape_once | markdownify}}
-      <a href="#{{ post.path | replace: '/data/' , '' | uri_escape}}">#</a>
+      {% capture data %}{% include_relative {{ post.path }} %}{% endcapture %}
+        
+      <blockquote cite="www.quotation.source" id="{{ post.path | replace: '/data/' , '' }}">
+        {{ data | strip| escape_once | markdownify}}      <a href="#{{ post.path | replace: '/data/' , '' | uri_escape}}">#</a>
+      </blockquote>
+        
       </li>
       {% endif %}
       {% endfor %}
