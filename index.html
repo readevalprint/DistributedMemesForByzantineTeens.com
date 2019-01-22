@@ -18,13 +18,13 @@
       {% for post in site.static_files | sample: site.static_files.size %}
       {% if post.path contains '/data/' %}
         <div class="card">
-          <figure>
             <label for="{{post.path}}">
+          <figure>
               <img height=200 class="lazy section media" data-src="{{ post.path }}" />
               <figcaption>{{ post.path | replace: '/data/' , '' | uri_escape| replace: '.png' '' }}</figcaption>
-           </label>
             
          </figure>
+           </label>
         </div>        
             <input type="checkbox" id="{{post.path}}" class="modal">
             <div>
