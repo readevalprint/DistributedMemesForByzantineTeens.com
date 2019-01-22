@@ -17,7 +17,7 @@
       {% for post in site.static_files | sample: site.static_files.size %}
       {% if post.path contains '/data/' %}
       <div class="col-sm-2">
-        <img src="post.path" alt="{{ post.path | replace: '/data/' , '' | uri_escape| replace: '.txt' '' }}"/>
+        <img src="{{ post.path }}" alt="{{ post.path | replace: '/data/' , '' | uri_escape| replace: '.txt' '' }}"/>
       </div>        
 
       {% endif %}
