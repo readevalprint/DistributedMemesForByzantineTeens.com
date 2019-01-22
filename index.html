@@ -7,20 +7,29 @@
     <title>Distributed Memes For Byzantine Teens</title>
   </head>
   <body>
+    <header class="sticky">
+  <a href="#" class="logo">Distributed Memes For Byzantine Teens</a>
+  <a href="https://github.com/readevalprint/DistributedMemesForByzantineTeens.com" >Distributed Memes For Byzantine Teens</a>
+</header>
       {% capture data %}{% include_relative README.md %}
-      {% endcapture %}{{ data | replace: "](./", "](#" | escape_once| markdownify  }}
+      {% endcapture %}{{ data | escape_once| markdownify }}
     <ul class="posts">
-      {% for post in site.static_files %}
+      {% for post in site.static_files | sample: site.static_files.size %}
       {% if post.path contains '/data/' %}
       {% capture data %}{% include_relative {{ post.path }} %}{% endcapture %}
         
-      <blockquote cite="{{ post.path | replace: '/data/' , '' | uri_escape| replace: '.md' ''}}" id="{{ post.path | replace: '/data/' , '' }}">
-        {{ data | strip| escape_once | markdownify}}      <a href="#{{ post.path | replace: '/data/' , '' | uri_escape}}">#</a>
+      <blockquote cite="{{ post.path | replace: '/data/' , '' | uri_escape| replace: '.txt' ''}}" id="{{ post.path | replace: '/data/' , '' }}">
+        {{ data | strip| escape_once }}      <a href="#{{ post.path | replace: '/data/' , '' | uri_escape}}">#</a>
       </blockquote>
         
-      </li>
+
       {% endif %}
       {% endfor %}
+
     </ul>
+    
+    <footer class="sticky">
+      <p>An Experement by <a href="https://readevalprint.com">ReadEvalPrint</a></p>
+  </footer>
   </body>
 </html>
