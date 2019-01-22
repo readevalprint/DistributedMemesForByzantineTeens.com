@@ -18,15 +18,14 @@
       {% for post in site.static_files | sample: site.static_files.size %}
       {% if post.path contains '/data/' %}
         <div class="card">
-          
-          <img class="section media" src="{{ post.path }}" />
+          <figure>
+            <img class="section media" src="{{ post.path }}" />
+            <figcaption>{{ post.path | replace: '/data/' , '' | uri_escape| replace: '.png' '' }}</figcaption>
+          </figure>
         </div>        
-
       {% endif %}
       {% endfor %}
-
     </div>
-    
     <footer class="sticky">
       <p>An Experement by <a href="https://readevalprint.com">ReadEvalPrint</a></p>
   </footer>
