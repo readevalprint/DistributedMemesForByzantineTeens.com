@@ -9,24 +9,21 @@
   <body>
     <header class="sticky">
   <a href="#" class="logo">Distributed Memes For Byzantine Teens</a>
-  <a href="https://github.com/readevalprint/DistributedMemesForByzantineTeens.com" >Distributed Memes For Byzantine Teens</a>
-</header>
+  <a href="https://github.com/readevalprint/DistributedMemesForByzantineTeens.com" >on Github</a>
+  </header>
       {% capture data %}{% include_relative README.md %}
       {% endcapture %}{{ data | escape_once| markdownify }}
-    <ul class="posts">
+    <div class="row">
       {% for post in site.static_files | sample: site.static_files.size %}
       {% if post.path contains '/data/' %}
-      {% capture data %}{% include_relative {{ post.path }} %}{% endcapture %}
-        
-      <blockquote cite="{{ post.path | replace: '/data/' , '' | uri_escape| replace: '.txt' ''}}" id="{{ post.path | replace: '/data/' , '' }}">
-        {{ data | strip| escape_once }}      <a href="#{{ post.path | replace: '/data/' , '' | uri_escape}}">#</a>
-      </blockquote>
-        
+      <div class="col-sm-2">
+        <img src="post.path" alt="{{ post.path | replace: '/data/' , '' | uri_escape| replace: '.txt' '' }}"/>
+      </div>        
 
       {% endif %}
       {% endfor %}
 
-    </ul>
+    </div>
     
     <footer class="sticky">
       <p>An Experement by <a href="https://readevalprint.com">ReadEvalPrint</a></p>
