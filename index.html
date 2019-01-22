@@ -23,18 +23,18 @@
               <img height=200 class="lazy section media" data-src="{{ post.path }}" />
               <figcaption>{{ post.path | replace: '/data/' , '' | uri_escape| replace: '.png' '' }}</figcaption>
            </label>
+            
+         </figure>
+        </div>        
             <input type="checkbox" id="{{post.path}}" class="modal">
-
             <div>
               <div class="card">
-                <label for="modal-control" class="modal-close" ></label>
+                <label for="{{post.path}}" class="modal-close" ></label>
                 <h3 class="section">{{ post.path | replace: '/data/' , '' | uri_escape| replace: '.png' '' }}</h3>
                   <img height=200 class="lazy section media" data-src="{{ post.path }}" />
               </div>
             </div>
-            
-         </figure>
-        </div>        
+
       {% endif %}
       {% endfor %}
     </div>
