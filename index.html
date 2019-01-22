@@ -18,22 +18,11 @@
       {% for post in site.static_files | sample: site.static_files.size %}
       {% if post.path contains '/data/' %}
         <div class="card">
-            <label for="{{post.path}}">
           <figure>
               <img height=200 class="lazy section media" data-src="{{ post.path }}" />
-              <figcaption>{{ post.path | replace: '/data/' , '' | uri_escape| replace: '.png' '' }}</figcaption>
-            
+              <figcaption>{{ post.path | replace: '/data/' , '' | uri_escape| replace: '.png' '' }}</figcaption>    
          </figure>
-           </label>
-        </div>        
-            <input type="checkbox" id="{{post.path}}" class="modal">
-            <div>
-              <div class="card">
-                <label for="{{post.path}}" class="modal-close" ></label>
-                <h3 class="section">{{ post.path | replace: '/data/' , '' | uri_escape| replace: '.png' '' }}</h3>
-                  <img height=200 class="lazy section media" data-src="{{ post.path }}" />
-              </div>
-            </div>
+        </div>
 
       {% endif %}
       {% endfor %}
