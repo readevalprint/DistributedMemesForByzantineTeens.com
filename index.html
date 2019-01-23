@@ -19,7 +19,7 @@
       {% if post.path contains '/data/' %}
         <div class="card">
           <figure>
-              <img height=200 class="lazy section media" data-src="{{ post.path }}" />
+              <img height=200 class="lazy section media" data-src="{{ post.path }}?ref={{ site.github.build_revision }}" />
               <figcaption>{{ post.path | replace: '/data/' , '' | uri_escape| replace: '.png' '' }}</figcaption>    
          </figure>
         </div>
@@ -28,8 +28,9 @@
       {% endfor %}
     </div>
     <footer class="sticky">
-      <p>A <a href="https://readevalprint.com">ReadEvalPrint</a> experiment</p>
-      <code>{{ site.github.build_revision }}</code>
+      <p>A <a href="https://readevalprint.com">ReadEvalPrint</a> experiment
+        <code>{{ site.github.build_revision }}</code>
+      </p>
   </footer>
     </div>
     <script>
