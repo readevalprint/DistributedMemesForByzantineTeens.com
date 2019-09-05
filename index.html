@@ -9,7 +9,9 @@
   <body>
     <header class="sticky">
   <a href="#" class="logo">Distributed Memes For Byzantine Teens</a>
-  <a href="https://github.com/readevalprint/DistributedMemesForByzantineTeens.com" >on Github</a>
+      <p>A <a href="https://readevalprint.com">ReadEvalPrint</a> experiment
+        <code>{{ site.github.build_revision }}</code>
+      </p>
   </header>
     <div class="container">
       {% capture data %}{% include_relative README.md %}
@@ -27,11 +29,6 @@
       {% endif %}
       {% endfor %}
     </div>
-    <footer class="sticky">
-      <p>A <a href="https://readevalprint.com">ReadEvalPrint</a> experiment
-        <code>{{ site.github.build_revision }}</code>
-      </p>
-  </footer>
     </div>
     <script>
     (function(w, d){
