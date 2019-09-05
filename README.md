@@ -1,5 +1,3 @@
-![](https://img.shields.io/twitter/follow/ByzantineTeens.svg?label=Follow&style=social)
-
 ![](https://img.shields.io/github/contributors/readevalprint/distributedmemesforbyzantineteens.com.svg?style=social)
 
 Let's make the bigest most contributed git repo in history!
